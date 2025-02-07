@@ -8,18 +8,6 @@ import { HeroImage } from "./hero-image";
 import Demo from "./demos";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import Image from "next/image";
-import flag_1 from "../components/flags/ac.svg";
-import flag_2 from "../components/flags/ad.svg";
-import flag_3 from "../components/flags/ae.svg";
-import flag_4 from "../components/flags/af.svg";
-import flag_5 from "../components/flags/ag.svg";
-import flag_6 from "../components/flags/ai.svg";
-import flag_7 from "../components/flags/am.svg";
-import flag_8 from "../components/flags/ca.svg";
-import flag_9 from "../components/flags/ao.svg";
-import flag_10 from "../components/flags/aq.svg";
-import flag_11 from "../components/flags/ar.svg";
-import flag_12 from "../components/flags/as.svg";
 
 
 
@@ -66,7 +54,7 @@ export const HomepageHero = () => {
 
             <Description className="translate-y-[-2rem] text-base sm:text-lg md:text-xl animate-fade-in opacity-0 [--animation-delay:500ms]">
             <div className="pt-3">
-              At Overeasy, we're seeking native speakers from around the world for flexible, part‐time roles with competitive compensation.
+              At Overeasy, we&apos;re seeking native speakers from around the world for flexible, part‐time roles with competitive compensation.
             </div>
             </Description>
 
