@@ -71,7 +71,7 @@ export const Header = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
           </div>
 
           <div className="ml-auto flex h-full items-center">
-            <Button variant="secondary" href="https://forms.gle/dhScNYzs6uDgMQ1w7" target="_blank"
+            <Button variant="secondary" href="https://docs.google.com/document/d/14SiWhxuY2OGBR0QMq5s6jVUWdlqGN1Tz_vEzsF50GBw/edit?usp=sharing" target="_blank"
               onClick={() => {
                 setOpen(true)
                 posthog.capture("GithubClicked", {'clicked_at': 'header'});

@@ -62,6 +62,19 @@ export const Description = ({ children, className }: HeroElementProps) => {
   );
 };
 
+export const Description2 = ({ children, className }: HeroElementProps) => {
+  return (
+    <div
+      className={classNames(
+        "font-light text-gray md:text-xlg text-md",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+};
+
 export const Hero = ({ children }: HeroProps) => {
   return <div className="text-center">{children}</div>;
 };

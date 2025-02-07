@@ -7,6 +7,19 @@ import { FaGithub } from "react-icons/fa";
 import { HeroImage } from "./hero-image";
 import Demo from "./demos";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import Image from "next/image";
+import flag_1 from "../components/flags/ac.svg";
+import flag_2 from "../components/flags/ad.svg";
+import flag_3 from "../components/flags/ae.svg";
+import flag_4 from "../components/flags/af.svg";
+import flag_5 from "../components/flags/ag.svg";
+import flag_6 from "../components/flags/ai.svg";
+import flag_7 from "../components/flags/am.svg";
+import flag_8 from "../components/flags/ca.svg";
+import flag_9 from "../components/flags/ao.svg";
+import flag_10 from "../components/flags/aq.svg";
+import flag_11 from "../components/flags/ar.svg";
+import flag_12 from "../components/flags/as.svg";
 
 
 
@@ -51,17 +64,14 @@ export const HomepageHero = () => {
               <span>Talk, Record, Earn. </span>
             </HeroTitle>
 
-
-
             <Description className="translate-y-[-2rem] text-base sm:text-lg md:text-xl animate-fade-in opacity-0 [--animation-delay:500ms]">
-              
             <div className="pt-3">
-              At Overeasy, we’re seeking native speakers from around the world for flexible, part‐time roles with competitive compensation.
-            </div>
-            <div className="pt-6 pb-5">
-              We partner directly with leading AI companies to connect you with innovative audio projects that are transforming the industry.
+              At Overeasy, we're seeking native speakers from around the world for flexible, part‐time roles with competitive compensation.
             </div>
             </Description>
+
+
+
 
 
             {/* <button className="text-lg bg-white bg-opacity-5 hover:bg-opacity-0 border border-transparent-white p-5 mt-[3rem] rounded-xl">
@@ -72,12 +82,13 @@ export const HomepageHero = () => {
               <a href="https://usecheck.com/" className="text-[#ffffff] opacity-40 hover:btn-shine text-lg" target="_blank">Start Working with IRIS --> </a>
             </div> */}
 
-            <ShimmerButton className="mt-6 mb-[12rem] translate-y-[-3rem] animate-fade-in opacity-0 [--animation-delay:450ms]" href="https://forms.gle/dhScNYzs6uDgMQ1w7" target="_blank">
-              <span className="pl-2 text-lg subtitle-gradient">
-                Apply Today
+            <ShimmerButton className="mt-8 mb-[14rem] translate-y-[-3rem] animate-fade-in opacity-0 [--animation-delay:450ms] px-6 py-3" href="https://docs.google.com/document/d/14SiWhxuY2OGBR0QMq5s6jVUWdlqGN1Tz_vEzsF50GBw/edit?usp=sharing" target="_blank">
+              <span className="y-1 pl-2 text-2xl subtitle-gradient">
+                <div>Apply Today</div>
               </span>
-              <MdOutlineArrowRightAlt className="ml-1" size={27} />
+              <MdOutlineArrowRightAlt className="ml-2" size={32} />
             </ShimmerButton> 
+
           </div>
         </div>
 
@@ -85,6 +96,10 @@ export const HomepageHero = () => {
           <HeroImage />
         </div> */}
       </div>
+
+      
     </Hero>
+
+    
   );
 };

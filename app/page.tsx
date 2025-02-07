@@ -13,7 +13,7 @@ import posthog from "posthog-js";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import { YCLogo } from "../components/icons/yc-logo";
-import { Hero, HeroTitle, HeroTitle2, HeroSubtitle, Description } from "../components/hero";
+import { Hero, HeroTitle, HeroTitle2, HeroSubtitle, Description, Description2 } from "../components/hero";
 import { IoExitOutline } from "react-icons/io5";
 import CoolEllipse from "../components/icons/coolellipse";
 import ex_1 from "../components/icons/testtest-01.png"
@@ -23,12 +23,53 @@ import graph from "../components/icons/iris performance graph clear.png"
 import table from "../components/icons/comparison table clear.png"
 import mobile_graph from "../components/icons/mobile graph.png"
 import mobile_table from "../components/icons/mobile table.png"
+import flag_1 from "../public/flags/flag-1.png"
+import flag_2 from "../public/flags/flag-2.png" 
+import flag_3 from "../public/flags/flag-3.png"
+import flag_4 from "../public/flags/flag-4.png"
+import flag_5 from "../public/flags/flag-5.png"
+import flag_6 from "../public/flags/flag-6.png"
+import flag_7 from "../public/flags/flag-7.png"
+import flag_8 from "../public/flags/flag-8.png"
+import flag_9 from "../public/flags/flag-9.png"
+import flag_10 from "../public/flags/flag-10.png"
+import { ShimmerButton } from "../components/shimmer-button";
+import { MdOutlineArrowRightAlt } from "react-icons/md";
+
 
 export default function Homepage() {
   const [isOpen, setOpen] = React.useState(false)
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [currentTestimonial, setCurrentTestimonial] = React.useState(0);
   const FORM_URL = "https://script.google.com/macros/s/AKfycbznSdbmBE7D4pbKiqrEhq9IjAukiAFh2cN55pMdcxnU77qinumzDCPURWmZTvPm-lhY/exec";
 
+  const testimonials = [
+    {
+      quote: "The projects are straightforward and the whole thing is super easy to manage.",
+      author: "PD",
+      role: "Program Participant"
+    },
+    {
+      quote: "The whole process was smoother than I expected and perfect for someone like me who has a full-time job and values flexibility.",
+      author: "DL",
+      role: "Program Participant"
+    },
+    {
+      quote: "I never thought earning money from home could be this easy and fun!",
+      author: "JW",
+      role: "Program Participant"
+    }
+  ];
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTestimonial((prev) => 
+        prev === testimonials.length - 1 ? 0 : prev + 1
+      );
+    }, 5000); // Change testimonial every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
 
   const colorCodePerformance = (performance: string) => {
     return performance.split('').map((char, index) => (
@@ -37,7 +78,6 @@ export default function Homepage() {
       </span>
     ));
   };
-
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -87,95 +127,66 @@ export default function Homepage() {
           <CoolEllipse />
         </div>
         <Container className="pt-[3rem] sm:pt-[8rem]">
-          <div >
-            <HomepageHero />
+          <div>
+          <HomepageHero />
+
+
+          <div className="rounded-[3rem] mt-8 border border-2 border-transparent-white">
+              <HeroSubtitle className="mt-[8rem] text-center translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms] font-mono text-2xl">
+                <span>How We Operate </span>
+              </HeroSubtitle>
+
+              <Description className="text-center mx-[20rem] translate-y-[-2rem] text-base sm:text-lg md:text-xl animate-fade-in opacity-0 [--animation-delay:500ms]">
+              <div className="pt-6 pb-5">
+                We collaborate with top-tier AI companies that are shaping the future of the industry. All you need is a high-quality microphone and proficiency in your native language.
+              </div>
+              <div className="pt-6 pb-5">
+                Apply in under 10 minutes to start earning competitive pay for flexible, part-time work. Successful candidates will join our community and gain access to exclusive part-time opportunities.
+              </div>
+              <div className="pt-6 pb-[9rem]">
+                Applications rolling until <strong>Feb 20, 2025</strong>.
+              </div> 
+              </Description>
+            </div>
+
+
+          <div className="rounded-[3rem] mt-8 border border-2 border-transparent-white">
+            <HeroSubtitle className="mt-[8rem] text-center">Why Participants Love Our Voice Program</HeroSubtitle>
+            <div className="mt-6 mb-[9rem] relative">
+              <div className="transition-opacity duration-500 text-center max-w-4xl mx-auto px-4">
+                <Description2 className="text-xl text-grey mb-4">"{testimonials[currentTestimonial].quote}"</Description2>
+                <Description2 className="text-grey text-lg">{testimonials[currentTestimonial].author}</Description2>
+                <Description2 className="text-grey text-lg">{testimonials[currentTestimonial].role}</Description2>
+              </div>
+              <div className="flex justify-center mt-6 space-x-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      currentTestimonial === index ? 'bg-white w-4' : 'bg-grey'
+                    }`}
+                    onClick={() => setCurrentTestimonial(index)}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <HeroSubtitle className="mt-[8rem]">Ready to Start Earning?</HeroSubtitle>
+            <ShimmerButton className="mt-6 animate-fade-in opacity-0" href="https://docs.google.com/document/d/14SiWhxuY2OGBR0QMq5s6jVUWdlqGN1Tz_vEzsF50GBw/edit?usp=sharing" target="_blank">
+                <span className="pl-2 text-lg subtitle-gradient">
+                  Apply Today
+                </span>
+                <MdOutlineArrowRightAlt className="ml-1" size={27} />
+              </ShimmerButton> 
+          </div>
           </div>
         </Container>
-        
-
-        {/* <Container className="pt-[8rem]">
-          <div className="border border-transparent-white rounded-3xl p-[7rem]">
-            <HeroSubtitle className="mt-8 mb-6">IRIS enables performance at speeds 100x faster than GPT4o.</HeroSubtitle>
-
-            <Description className="mb-2"> We measured IRIS&apos; performance on several object detection examples from the COCO validation dataset.</Description>
-            <Description className="mb-8">IRIS&apos; detections are shown in <span style={{ color: '#00FF39' }}> GREEN</span>, GPT-4V&apos;s detections are shown in <span style={{ color: '#FF362A' }}> RED</span>.</Description>
-
-            <div className="flex mb-8">
-              <div className="w-1/3 mx-1">
-                  <img src={ex_1.src} alt="Example 1" className="rounded-lg my-2" />
-                  <p className="text-center text-sm mt-2 text-grey">1. Zebra</p>
-              </div>
-              <div className="w-1/3 mx-1">
-                  <img src={ex_2.src} alt="Example 2" className="rounded-lg my-2" />
-                  <p className="text-center text-sm mt-2 text-grey">2. Girl</p>
-              </div>
-              <div className="w-1/3 mx-1">
-                  <img src={ex_3.src} alt="Example 3" className="rounded-lg my-2" />
-                  <p className="text-center text-sm mt-2 text-grey">3. Surfer</p>
-              </div>
-          </div>
-          </div>
-        </Container> */}
-
-      {/* <Container className="pt-[4rem] sm:pt-[8rem]">
-        <div className="border border-transparent-white rounded-3xl p-[2rem] sm:p-[7rem]">
-          <HeroSubtitle className="mb-4">IRIS Announcement</HeroSubtitle>
-          <div className="pt-[2rem] sm:pt-[4rem] pb-[1rem] sm:pb-[2rem] rounded-lg">
-            <div className="relative w-full pb-[56.25%]">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-lg"
-                src="https://www.youtube.com/embed/aa10GQpWY4A"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-        </div>  
-      </Container> */}
-
-        {/* <Container className="pt-[8rem]">
-        <div id="benchmarks" className="border border-transparent-white rounded-3xl p-4 sm:p-8 md:p-12 lg:p-16">
-            <HeroSubtitle className="mb-4">Benchmarks</HeroSubtitle>
-
-            <Description className="mb-4">IRIS reaches <a href="https://paperswithcode.com/sota/zero-shot-object-detection-on-lvis-v1-0" className="underline blue" target="_blank">SOTA zero-shot performance</a> on datasets like COCO and LVIS</Description>
-            <div className="mb-8 w-full flex justify-center items-center">
-        
-              <img 
-                src={mobile_graph.src} 
-                alt="Performance graph (mobile)" 
-                className="rounded-lg my-2 pb-4 pt-2 w-full max-w-[100%] sm:max-w-[800px] h-auto block"
-              />
-            </div>
-            <HeroSubtitle className="mb-4">Selected Examples</HeroSubtitle>
-            <Description className="mb-4">
-              Here are a few examples of how IRIS stacks up against other zero-shot models like GroundingDINO.
-              <br className=""/>
-              IRIS does particularly well on long-tail tasks for uncommon objects where other models struggle.
-            </Description>
-
-            <div className="w-full flex justify-center items-center">
-              <img 
-                src={table.src} 
-                alt="Comparison table" 
-                className="rounded-lg pt-2 w-full max-w-[100%] sm:max-w-[800px] h-auto hidden sm:block"
-              />
-              <img 
-                src={mobile_table.src} 
-                alt="Comparison table (mobile)" 
-                className="rounded-lg pt-2 w-full max-w-[100%] sm:max-w-[800px] h-auto sm:hidden"
-              />
-            </div>
-          </div>
-        </Container> */}
-
-      
-
       </div>
 
       <div className="flex justify-center items-center pl-1 items-center space-x-2">
-        <div className="text-lg text-grey">  Backed by</div>
+        <div className="text-lg text-grey">Backed by</div>
           <YCLogo/>
         <div className="text-lg text-grey">Combinator</div>
       </div>
@@ -190,6 +201,7 @@ export default function Homepage() {
       >
         <div id="egg"></div>
       </div>
+
 
 
       <Footer/>
