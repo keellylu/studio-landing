@@ -154,7 +154,7 @@ export default function Homepage() {
             <HeroSubtitle className="mt-[8rem] text-center">Why Participants Love Our Voice Program</HeroSubtitle>
             <div className="mt-6 mb-[9rem] relative">
               <div className="transition-opacity duration-500 text-center max-w-4xl mx-auto px-4">
-                <Description2 className="text-xl text-grey mb-4">"{testimonials[currentTestimonial].quote}"</Description2>
+                <Description2 className="text-xl text-grey mb-4">&quot;{testimonials[currentTestimonial].quote}&quot;</Description2>
                 <Description2 className="text-grey text-lg">{testimonials[currentTestimonial].author}</Description2>
                 <Description2 className="text-grey text-lg">{testimonials[currentTestimonial].role}</Description2>
               </div>
