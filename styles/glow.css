@@ -1,0 +1,6 @@
+.glow {
+    border-radius: 12;
+    margin: 80;
+    padding: 4;
+    box-shadow: rgba(43, 43, 64, 0.5) 0 0 90px 3px;
+  }

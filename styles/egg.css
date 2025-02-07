@@ -1,0 +1,44 @@
+#egg {
+    font-size: 40px; 
+    width: 3em;
+    height: 4em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -1.5em;
+    margin-top: -2em;
+    box-shadow: #aaa 0 0 1px;
+    border-top-left-radius: 50% 60%;
+    border-top-right-radius: 50% 60%;
+    border-bottom-left-radius: 50% 40%;
+    border-bottom-right-radius: 50% 40%;
+    background: rgba(255, 255, 255, .1) -webkit-radial-gradient(left top, #fff, rgba(255, 255, 255, .1));
+    transform-origin: center 80%;
+    animation: shake 2s alternate infinite;
+    transition: opacity 3s ease;
+}
+
+
+@keyframes shake {
+    0% {
+        -webkit-transform: rotate(0);
+    }
+    10% {
+        -webkit-transform: rotate(5deg);
+    }
+    20% {
+        -webkit-transform: rotate(-5deg);
+    }
+    30% {
+        -webkit-transform: rotate(0);
+    }
+    50% {
+        -webkit-transform: rotate(5deg);
+    }
+    70% {
+        -webkit-transform: rotate(-5deg);
+    }
+    100% {
+        -webkit-transform: rotate(0);
+    }
+}
