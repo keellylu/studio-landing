@@ -30,8 +30,8 @@ export const Header = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
   return (
     <div className="flex justify-center"> 
 
-      <header className="fixed top-3 left-30 z-20 w-[380px] border border-transparent-white backdrop-blur-[12px] rounded-full">
-        <div className="flex h-navigation-height pl-4 pr-3">
+    <header className="fixed top-3 left-1/2 -translate-x-1/2 z-20 w-[380px] border border-transparent-white backdrop-blur-[12px] rounded-full">
+      <div className="flex h-navigation-height pl-4 pr-3">
           <Link className="flex items-center text-md" href="/">
             {/* <Logo className="mr-4 h-[1.8rem] w-[1.8rem]" />  */}
             {/* <Image className="mr-2" width={30} src={logo_img} alt="Overeasy"/> */}
@@ -71,14 +71,14 @@ export const Header = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
           </div>
 
           <div className="ml-auto flex h-full items-center">
-            <Button variant="secondary" href="https://forms.gle/zfLoNiZnmarLdtRr6" target="_blank"
+            <Button variant="secondary" href="https://forms.gle/dhScNYzs6uDgMQ1w7" target="_blank"
               onClick={() => {
                 setOpen(true)
                 posthog.capture("GithubClicked", {'clicked_at': 'header'});
                 // @ts-ignore
                 gtag('event', 'conversion', {'send_to': 'AW-829256223/zQFqCNyL7JgZEJ_ktYsD'}); 
               }}
-            >Get in Touch</Button>
+            >Apply Today</Button>
           </div>
 
         </div>

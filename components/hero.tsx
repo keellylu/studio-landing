@@ -38,27 +38,27 @@ export const HeroTitle2 = ({ children, className }: HeroElementProps) => {
 
 export const HeroSubtitle = ({ children, className }: HeroElementProps) => {
   return (
-    <p
+    <div
       className={classNames(
         "space-grotesk-300 text-white md:text-[2.8rem] text-2xl",
         className
       )}
     >
       {children}
-    </p>
+    </div>
   );
 };
 
 export const Description = ({ children, className }: HeroElementProps) => {
   return (
-    <p
+    <div
       className={classNames(
         "font-light text-white md:text-xlg text-md",
         className
       )}
     >
       {children}
-    </p>
+    </div>
   );
 };
 
