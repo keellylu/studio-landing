@@ -138,13 +138,13 @@ export default function Homepage() {
 
               <Description className="text-center mx-[20rem] translate-y-[-2rem] text-base sm:text-lg md:text-xl animate-fade-in opacity-0 [--animation-delay:500ms]">
               <div className="pt-6 pb-5">
-                We collaborate with top-tier AI companies that are shaping the future of the industry. All you need is a high-quality microphone and proficiency in your native language.
+                We collaborate with top-tier AI companies that are shaping the future of the industry. All you need is proficiency in your native language.
               </div>
               <div className="pt-6 pb-5">
                 Apply in under 10 minutes to start earning competitive pay for flexible, part-time work. Successful candidates will join our community and gain access to exclusive part-time opportunities.
               </div>
               <div className="pt-6 pb-[9rem]">
-                Applications rolling until <strong>Feb 20, 2025</strong>.
+                We review applications on a rolling basis.
               </div> 
               </Description>
             </div>
